@@ -20,10 +20,9 @@ The website can be deployed using **GitHub Pages**:
 - Scroll fade-in animations for polished, professional look.
 - SEO-ready with meta tags, `robots.txt`, and `sitemap.xml`.
 - Multi-project portfolio layout for:
-  - **Axyz Display System**
-  - **Axyz Paging System**
-  - **Conzeus Marketplace**
-  - **E-doc Document Generator**
+  - **Axyz Order System**
+  - **Conzeus Place**
+  - **My-Edoc Generator**
 - Contact form (mailto-based) for quick inquiries.
 
 ---
@@ -35,10 +34,9 @@ All images are stored in the `images/` folder. Free commercial-use placeholders 
 | Filename | Usage |
 |----------|-------|
 | hero.jpg | Hero section & About/Contact illustration |
-| ads.jpg | Axyz Display System |
-| paging.jpg | Axyz Paging System |
-| marketplace.jpg | Conzeus Marketplace |
-| construction.jpg | E-doc Document Generator |
+| aos.jpg | Axyz Display System |
+| conzeusplace.jpg | Conzeus Place |
+| construction.jpg | My-Edoc Generator |
 
 ---
 
