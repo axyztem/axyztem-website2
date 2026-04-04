@@ -1,0 +1,156 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+
+<title>Conzeus Place — Spain AI Guide | Axyztem</title>
+
+<meta name="description" content="Conzeus Place — Spain AI Guide. A digital ecosystem connecting tourists, locals, businesses, and jobseekers across Spain.">
+
+<meta name="robots" content="index, follow">
+<link rel="stylesheet" href="../css/styles.css">
+
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600&display=swap" rel="stylesheet">
+
+<style>
+
+.section-grid{
+display:grid;
+grid-template-columns:repeat(auto-fit,minmax(260px,1fr));
+gap:30px;
+margin-top:40px;
+}
+
+.card{
+background:white;
+padding:25px;
+border-radius:12px;
+box-shadow:0 10px 25px rgba(0,0,0,0.08);
+transition:.3s;
+}
+
+.card:hover{
+transform:translateY(-6px);
+}
+
+.center{
+text-align:center;
+margin-top:50px;
+}
+
+</style>
+</head>
+
+<body>
+
+<header>
+<div class="container">
+<nav>
+<div class="logo">
+<img src="../images/axyztem-logo.png" style="height:50px;">
+</div>
+
+<div>
+<a href="../index.html">Home</a>
+<a href="../about.html">About</a>
+<a href="../projects.html">Projects</a>
+<a href="../contact.html">Contact</a>
+</div>
+</nav>
+</div>
+</header>
+
+<!-- HERO -->
+<section class="hero">
+<div class="hero-text">
+
+<h1>Conzeus Place</h1>
+<h2 style="font-weight:400;color:#4f46e5;">Spain AI Guide</h2>
+
+<p>
+An intelligent digital place ecosystem designed to help people discover opportunities, experiences, and connections across Spain — whether visiting, living, investing, or building a career.
+</p>
+
+</div>
+
+<div class="hero-img">
+<img src="../images/conzeusplace.jpg" width="500" alt="Spain travel and digital guide">
+</div>
+</section>
+
+<!-- OVERVIEW -->
+<section class="container">
+<h2>A Digital Ecosystem for Modern Spain</h2>
+
+<p>
+Conzeus Place aims to unify local discovery, tourism intelligence, business opportunity awareness, and career growth guidance into one intelligent platform tailored for Spain’s dynamic environment.
+</p>
+
+<div class="section-grid">
+
+<div class="card">
+<h3>For Tourists</h3>
+<p>
+Discover authentic Spanish experiences including local cuisine, top restaurants in Málaga and across Spain, attractions, hidden destinations, and available transportation options nearby.
+</p>
+</div>
+
+<div class="card">
+<h3>For Locals</h3>
+<p>
+Explore new places, services, and lifestyle opportunities within your own region. Find events, food destinations, and practical services designed for everyday living.
+</p>
+</div>
+
+<div class="card">
+<h3>For Businessmen & Investors</h3>
+<p>
+Identify emerging opportunities, supply sources, commercial locations, and property investments supported by intelligent insights into regional economic activity.
+</p>
+</div>
+
+<div class="card">
+<h3>For Jobseekers</h3>
+<p>
+Access career opportunities, understand evolving job markets, discover pathways into new industries, and learn strategies for professional growth within Spain.
+</p>
+</div>
+
+</div>
+
+<div class="center">
+<p><strong>Conzeus Place is currently under development.</strong></p><br>
+<a class="btn" href="../contact.html">Request Updates</a><br><br>
+</div>
+
+</section>
+
+<section class="cta">
+<h2>Discover Spain Through Intelligence</h2>
+<a class="btn" href="../contact.html">Contact Axyztem</a>
+</section>
+
+<footer>
+<p>© Axyztem — Sustainable Business Innovation</p>
+</footer>
+
+<script>
+const cards=document.querySelectorAll('.card');
+const observer=new IntersectionObserver(entries=>{
+entries.forEach(entry=>{
+if(entry.isIntersecting){
+entry.target.style.opacity=1;
+entry.target.style.transform='translateY(0)';
+}
+});
+});
+
+cards.forEach(c=>{
+c.style.opacity=0;
+c.style.transform='translateY(20px)';
+observer.observe(c);
+});
+</script>
+
+</body>
+</html>

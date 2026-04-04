@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Axyztem | Sustainable Business Innovation</title>
+<meta name="description" content="Axyztem develops reliable and functional SaaS systems focused on sustainable business innovation.">
+<meta name="robots" content="index, follow">
+<link rel="stylesheet" href="css/styles.css">
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600&display=swap" rel="stylesheet">
+</head>
+<body>
+
+<header>
+<div class="container">
+<nav>
+<div class="logo">
+  <img src="images/axyztem-logo.png" alt="Axyztem Logo" style="height:50px;">
+</div>
+<div>
+  <a href="index.html">Home</a>
+  <a href="about.html">About</a>
+  <a href="projects.html">Projects</a>
+  <a href="contact.html">Contact</a>
+</div>
+</nav>
+</div>
+</header>
+
+<section class="hero">
+<div class="hero-text">
+<h1>Sustainable Business Innovation Through Reliable Software</h1>
+<p>We design reliable and functional SaaS platforms that improve operational efficiency through practical and resilient technology.</p>
+<a class="btn" href="projects.html">Explore Projects</a>
+<a class="btn" href="about.html">About Axyztem</a>
+</div>
+<div class="hero-img">
+<img src="images/hero.png" alt="Technology Illustration" width="500">
+</div>
+</section>
+
+<section class="cta">
+<h2>Discover Our Innovative Software Solutions</h2>
+<a class="btn" href="projects.html">View Projects</a>
+</section>
+
+<footer>
+<p>© Axyztem — Sustainable Business Innovation</p>
+</footer>
+
+<script>
+// Scroll animation for future content if needed
+const elements = document.querySelectorAll('.card, .hero-text');
+const observer = new IntersectionObserver(entries=>{
+  entries.forEach(entry=>{
+    if(entry.isIntersecting) entry.target.style.opacity=1;
+  });
+},{threshold:0.2});
+elements.forEach(el=>observer.observe(el));
+</script>
+
+</body>
+</html>
