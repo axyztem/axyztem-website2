@@ -34,7 +34,7 @@ All images are stored in the `images/` folder. Free commercial-use placeholders 
 | Filename | Usage |
 |----------|-------|
 | hero.jpg | Hero section & About/Contact illustration |
-| aos.jpg | Axyz Display System |
+| aos.jpg | Axyz Order System |
 | conzeusplace.jpg | Conzeus Place |
 | construction.jpg | My-Edoc Generator |
 
