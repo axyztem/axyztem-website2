@@ -6,67 +6,87 @@
 <meta name="description" content="Get in touch with Axyztem for SaaS solutions and project inquiries.">
 <meta name="robots" content="index, follow">
 
-<!-- <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=5, user-scalable=yes"> -->
-
 <link rel="stylesheet" href="css/styles.css">
 <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600&display=swap" rel="stylesheet">
+
+<!-- Google reCAPTCHA -->
+<script src="https://www.google.com/recaptcha/api.js" async defer></script>
 </head>
 <body>
 
 <header>
-<div class="container">
-<nav>
-
-  <div class="logo">
-     <img src="images/axyztem-logo.png" alt="Axyztem Logo" style="height:50px;">
+  <div class="container">
+    <nav>
+      <div class="logo">
+        <img src="images/axyztem-logo.png" alt="Axyztem Logo" style="height:50px;">
+      </div>
+      <div>
+        <a href="index.html">Home</a>
+        <a href="about.html">About</a>
+        <a href="projects.html">Projects</a>
+      </div>
+    </nav>
   </div>
-<!--
-<div><strong>Axyztem</strong></div>-->
-<div>
-<a href="index.html">Home</a>
-<a href="about.html">About</a>
-<a href="projects.html">Projects</a>
-</div>
-</nav>
-</div>
 </header>
 
 <section class="hero">
-<div class="hero-text">
-<h1>Contact Axyztem</h1>
-<p>We would love to hear from you. Reach out for project inquiries, demos, partnerships, or general questions.</p>
-</div>
-<div class="hero-img">
-<img src="images/herocontact.png" alt="Contact illustration" width="500">
-</div>
+  <div class="hero-text">
+    <h1>Contact Axyztem</h1>
+    <p>We would love to hear from you. Reach out for project inquiries, demos, partnerships, or general questions.</p>
+  </div>
+  <div class="hero-img">
+    <img src="images/herocontact.png" alt="Contact illustration" width="500">
+  </div>
 </section>
 
 <section class="container">
-<h2>Get in Touch</h2>
+  <h2>Get in Touch</h2>
 
-<form action="mailto:info@axyztem.es" method="post" enctype="text/plain">
-<label for="name">Name</label><br>
-<input type="text" id="name" name="name" required style="width:100%; padding:10px; margin-bottom:15px;"><br>
+  <form id="contactForm" method="POST">
+    <label for="name">Name</label><br>
+    <input type="text" id="name" name="name" required style="width:100%; padding:10px; margin-bottom:15px;"><br>
 
-<label for="email">Email</label><br>
-<input type="email" id="email" name="email" required style="width:100%; padding:10px; margin-bottom:15px;"><br>
+    <label for="email">Email</label><br>
+    <input type="email" id="email" name="email" required style="width:100%; padding:10px; margin-bottom:15px;"><br>
 
-<label for="message">Message</label><br>
-<textarea id="message" name="message" rows="6" required style="width:100%; padding:10px; margin-bottom:15px;"></textarea><br>
+    <label for="message">Message</label><br>
+    <textarea id="message" name="message" rows="6" required style="width:100%; padding:10px; margin-bottom:15px;"></textarea><br>
 
-<button type="submit" class="btn">Send Message</button><br><br>
-</form>
+    <!-- Google reCAPTCHA -->
+    <div class="g-recaptcha" data-sitekey="6LfwcqgsAAAAAN9PtmpdmkjFWaxyobg8Ge5haVW4"></div><br>
 
+    <button type="submit" class="btn">Send Message</button>
+  </form>
+  <p id="status"></p>
 </section>
 
 <section class="cta">
-<h2>Explore Our Projects</h2>
-<a class="btn" href="projects.html">View Projects</a>
+  <h2>Explore Our Projects</h2>
+  <a class="btn" href="projects.html">View Projects</a>
 </section>
 
 <footer>
-<p>© Axyztem — Sustainable Business Innovation</p>
+  <p>© Axyztem — Sustainable Business Innovation</p>
 </footer>
+
+<script>
+document.getElementById('contactForm').addEventListener('submit', async function(e) {
+  e.preventDefault();
+  const formData = new FormData(this);
+  const res = await fetch('/send-email', {
+    method: 'POST',
+    body: JSON.stringify(Object.fromEntries(formData)),
+    headers: { 'Content-Type': 'application/json' }
+  });
+  if (res.ok) {
+    document.getElementById('status').textContent = 'Message sent! Thank you.';
+    this.reset();
+    grecaptcha.reset(); // reset reCAPTCHA
+  } else {
+    document.getElementById('status').textContent = 'Error sending message. Try again.';
+  }
+});
+</script>
 
 </body>
 </html>
