@@ -250,3 +250,20 @@ footer {
     gap: 20px;
   }
 }
+
+
+
+/* UNIVERSAL IMAGE ROUNDING FIX */
+.card,
+.hero-img {
+  border-radius: 12px;
+  overflow: hidden;
+}
+
+.card img,
+.hero-img img {
+  border-radius: 12px;
+  width: 100%;
+  height: auto;
+  display: block;
+}
