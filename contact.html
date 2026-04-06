@@ -12,78 +12,91 @@
 <!-- Google reCAPTCHA -->
 <script src="https://www.google.com/recaptcha/api.js" async defer></script>
 </head>
+
 <body>
 
 <header>
-  <div class="container">
-    <nav>
-      <div class="logo">
-        <img src="images/axyztem-logo.png" alt="Axyztem Logo" style="height:50px;">
-      </div>
-      <div>
-        <a href="index.html">Home</a>
-        <a href="about.html">About</a>
-        <a href="projects.html">Projects</a>
-      </div>
-    </nav>
-  </div>
+<div class="container">
+<nav>
+<div class="logo">
+<img src="images/axyztem-logo.png" style="height:50px;">
+</div>
+<div>
+<a href="index.html">Home</a>
+<a href="about.html">About</a>
+<a href="projects.html">Projects</a>
+</div>
+</nav>
+</div>
 </header>
 
-<section class="hero">
-  <div class="hero-text">
-    <h1>Contact Axyztem</h1>
-    <p>We would love to hear from you. Reach out for project inquiries, demos, partnerships, or general questions.</p>
-  </div>
-  <div class="hero-img">
-    <img src="images/herocontact.png" alt="Contact illustration" width="500">
-  </div>
-</section>
-
 <section class="container">
-  <h2>Get in Touch</h2>
+<h2>Get in Touch</h2>
 
-  <form id="contactForm" method="POST">
-    <label for="name">Name</label><br>
-    <input type="text" id="name" name="name" required style="width:100%; padding:10px; margin-bottom:15px;"><br>
+<form id="contactForm">
+  <label for="name">Name</label>
+  <input type="text" id="name" name="name" required style="width:100%; padding:10px; margin-bottom:15px;">
 
-    <label for="email">Email</label><br>
-    <input type="email" id="email" name="email" required style="width:100%; padding:10px; margin-bottom:15px;"><br>
+  <label for="email">Email</label>
+  <input type="email" id="email" name="email" required style="width:100%; padding:10px; margin-bottom:15px;">
 
-    <label for="message">Message</label><br>
-    <textarea id="message" name="message" rows="6" required style="width:100%; padding:10px; margin-bottom:15px;"></textarea><br>
+  <label for="message">Message</label>
+  <textarea id="message" name="message" rows="6" required style="width:100%; padding:10px; margin-bottom:15px;"></textarea>
 
-    <!-- Google reCAPTCHA -->
-    <div class="g-recaptcha" data-sitekey="6LfwcqgsAAAAAN9PtmpdmkjFWaxyobg8Ge5haVW4"></div><br>
+  <!-- Invisible Bot Trap -->
+  <div style="display:none;">
+    <label>Leave this empty</label>
+    <input type="text" name="company">
+  </div>
 
-    <button type="submit" class="btn">Send Message</button>
-  </form>
+  <!-- reCAPTCHA -->
+  <div class="g-recaptcha" data-sitekey="6Lfje6ksAAAAAOugp3R9DYBhBkrUJjKx2nFVOQUM"></div>
+
+  <br>
+  <button type="submit" class="btn">Send Message</button>
   <p id="status"></p>
-</section>
+</form>
 
-<section class="cta">
-  <h2>Explore Our Projects</h2>
-  <a class="btn" href="projects.html">View Projects</a>
 </section>
 
 <footer>
-  <p>© Axyztem — Sustainable Business Innovation</p>
+<p>© Axyztem — Sustainable Business Innovation</p>
 </footer>
 
 <script>
-document.getElementById('contactForm').addEventListener('submit', async function(e) {
+document.getElementById('contactForm').addEventListener('submit', async function(e){
   e.preventDefault();
+
   const formData = new FormData(this);
+
+  // 🪤 Honeypot trap
+  if(formData.get("company")){
+    document.getElementById('status').textContent = "Spam detected.";
+    return;
+  }
+
+  // 🧩 Check reCAPTCHA
+  const captcha = grecaptcha.getResponse();
+  if(!captcha){
+    document.getElementById('status').textContent = "Please verify you are human.";
+    return;
+  }
+
+  formData.append("captcha", captcha);
+
+  // Send data to Worker
   const res = await fetch('/send-email', {
     method: 'POST',
     body: JSON.stringify(Object.fromEntries(formData)),
     headers: { 'Content-Type': 'application/json' }
   });
-  if (res.ok) {
-    document.getElementById('status').textContent = 'Message sent! Thank you.';
+
+  if(res.ok){
+    document.getElementById('status').textContent = "Message sent! Check your email.";
     this.reset();
-    grecaptcha.reset(); // reset reCAPTCHA
+    grecaptcha.reset();
   } else {
-    document.getElementById('status').textContent = 'Error sending message. Try again.';
+    document.getElementById('status').textContent = "Error sending message. Try again.";
   }
 });
 </script>
