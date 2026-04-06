@@ -6,75 +6,82 @@ a { text-decoration:none; color:#0B3D91; }
 
 /* Header */
 header { position: sticky; top:0; background:#fff; border-bottom:1px solid #eee; z-index:999; }
-nav { display:flex; justify-content:space-between; align-items:center; height:70px; }
-nav a { margin-left:25px; font-weight:1000; font-size: 20 px; letter-spacing: 0.5px; transition:0.2s; }
+nav { display:flex; justify-content:space-between; align-items:center; height:70px; flex-wrap:wrap; }
+nav a { margin-left:25px; font-weight:700; font-size:20px; letter-spacing:0.5px; transition:0.2s; }
 nav a:hover { color:#2F80ED; }
 
 /* Hero */
-.hero { display:flex; flex-wrap:wrap; align-items:center; justify-content:space-between;
-       padding:100px 20px; background:linear-gradient(135deg,#F7F8FA,#EAF1FF); position:relative; overflow:hidden; }
-.hero-text { max-width:600px; }
-.hero h1 { font-size:48px; color:#0B3D91; margin-bottom:20px; opacity:0; transform:translateY(20px); animation:fadeInUp 1s forwards 0.2s;}
-.hero p { font-size:20px; margin-bottom:30px; opacity:0; transform:translateY(20px); animation:fadeInUp 1s forwards 0.4s; }
-.btn { display:inline-block; padding:15px 30px; background:#0B3D91; color:#fff; border-radius:12px; font-weight:600; transition:0.3s; }
-.btn:hover { background:linear-gradient(90deg,#2F80ED,#0B3D91); }
+.hero { 
+  display:flex; 
+  flex-wrap:wrap; 
+  align-items:center; 
+  justify-content:space-between;
+  padding:60px 20px; 
+  background:linear-gradient(135deg,#F7F8FA,#EAF1FF);
+}
 
-/* Sections */
-section { padding:80px 0; }
-section h2 { font-size:36px; margin-bottom:20px; color:#0B3D91; }
-.grid { display:grid; grid-template-columns:repeat(auto-fit,minmax(260px,1fr)); gap:25px; }
-.card { background:#fff; border-radius:16px; padding:25px; box-shadow:0 10px 25px rgba(0,0,0,0.08);
-       transition:all 0.3s ease; opacity:0; transform:translateY(20px); animation:fadeInUp 1s forwards; }
-.card:hover { transform:translateY(-5px); box-shadow:0 15px 30px rgba(0,0,0,0.12); border-top:4px solid #2F80ED; }
-.card img { width:100%; border-radius:12px; margin-bottom:15px; }
+.hero-text { max-width:600px; }
+
+.hero h1 { 
+  font-size:42px; 
+  color:#0B3D91; 
+  margin-bottom:20px;
+}
+
+.hero p { 
+  font-size:18px; 
+  margin-bottom:30px;
+}
+
+.hero-img img {
+  width:100%;
+  max-width:450px;
+  height:auto;
+}
+
+.btn { 
+  display:inline-block; 
+  padding:15px 30px; 
+  background:#0B3D91; 
+  color:#fff; 
+  border-radius:12px; 
+  font-weight:600; 
+  transition:0.3s; 
+}
+.btn:hover { background:linear-gradient(90deg,#2F80ED,#0B3D91); }
 
 /* CTA */
 .cta { background:#0B3D91; color:#fff; text-align:center; padding:80px 20px; }
-.cta h2 {color: white; }
+.cta h2 { font-size:32px; margin-bottom:20px; }
 .cta .btn { background:#2F80ED; font-size:18px; padding:18px 35px; border-radius:12px; }
-.cta .btn:hover { background:linear-gradient(90deg,#2F80ED,#0B3D91); }
 
 /* Footer */
 footer { background:#111; color:#eee; text-align:center; padding:40px 20px; }
 
-/* Animations */
-@keyframes fadeInUp { to { opacity:1; transform:translateY(0); } }
-
-/* Responsive */
-@media(max-width:768px){ .hero { flex-direction:column; text-align:center; } .hero-text { max-width:100%; } }
-
-
-
-.snapshot-grid{
-display:grid;
-grid-template-columns:repeat(auto-fit,minmax(260px,1fr));
-gap:30px;
-margin-top:40px;
+/* MOBILE & TABLET RESPONSIVE FIXES */
+@media(max-width:1024px){
+  .hero h1 { font-size:36px; }
+  .hero p { font-size:17px; }
 }
 
-.snapshot{
-background:white;
-padding:25px;
-border-radius:12px;
-box-shadow:0 10px 25px rgba(0,0,0,0.08);
-transition:.3s;
+@media(max-width:768px){
+  nav { flex-direction:column; height:auto; padding:15px 0; }
+  nav a { margin:10px; font-size:18px; }
+
+  .hero { 
+    flex-direction:column; 
+    text-align:center; 
+    padding:40px 20px;
+  }
+
+  .hero h1 { font-size:32px; }
+  .hero p { font-size:16px; }
+
+  .btn { width:auto; margin:10px auto; }
 }
 
-.snapshot:hover{
-transform:translateY(-6px);
-}
-
-.benefits{
-max-width:900px;
-margin:auto;
-}
-
-.benefits li{
-margin-bottom:14px;
-font-size:18px;
-}
-
-.center{
-text-align:center;
-margin-top:50px;
+@media(max-width:480px){
+  .hero h1 { font-size:26px; }
+  .hero p { font-size:15px; }
+  nav a { font-size:16px; }
 }

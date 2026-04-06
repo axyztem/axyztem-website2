@@ -8,84 +8,17 @@
   <title>Axyztem | Sustainable Business Innovation</title>
 
   <meta name="description" content="Axyztem develops reliable and functional SaaS systems focused on sustainable business innovation. Streamline your business operations with modern, secure, and efficient software solutions.">
-
   <meta name="keywords" content="SaaS systems, sustainable business innovation, business software, cloud applications, restaurant management software, bar management system, workflow automation, Axyztem">
-
   <meta name="robots" content="index, follow">
   <meta name="author" content="Axyztem Holdings LLC">
   <meta http-equiv="Content-Language" content="en">
   <meta name="theme-color" content="#007BFF">
-
-  <!-- Accessibility / Compliance -->
   <meta name="color-scheme" content="light dark">
   <meta name="referrer" content="no-referrer-when-downgrade">
 
-  <!-- Open Graph / Facebook -->
-  <meta property="og:type" content="website">
-  <meta property="og:title" content="Axyztem | Sustainable Business Innovation">
-  <meta property="og:description" content="Axyztem develops reliable and functional SaaS systems focused on sustainable business innovation. Streamline your business operations with modern, secure, and efficient software solutions.">
-  <meta property="og:url" content="https://axyztem.es/">
-  <meta property="og:image" content="https://axyztem.es/images/axyz-og-image.jpg">
-  <meta property="og:locale" content="en_ES">
-
-  <!-- Twitter Card -->
-  <meta name="twitter:card" content="summary_large_image">
-  <meta name="twitter:title" content="Axyztem | Sustainable Business Innovation">
-  <meta name="twitter:description" content="Axyztem develops reliable and functional SaaS systems focused on sustainable business innovation. Streamline your business operations with modern, secure, and efficient software solutions.">
-  <meta name="twitter:image" content="https://axyztem.es/images/axyz-og-image.jpg">
-
   <link rel="canonical" href="https://axyztem.es/">
-
   <link rel="stylesheet" href="css/styles.css">
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600&display=swap" rel="stylesheet">
-
-  <!-- Structured Data (JSON-LD) -->
-  <script type="application/ld+json">
-  {
-    "@context": "https://schema.org",
-    "@graph": [
-      {
-        "@type": "Organization",
-        "name": "Axyztem Holdings LLC",
-        "url": "https://axyztem.es",
-        "logo": "https://axyztem.es/images/axyz-og-image.jpg",
-        "sameAs": [
-          "https://www.linkedin.com/company/axyztem",
-          "https://twitter.com/axyztem"
-        ],
-        "contactPoint": {
-          "@type": "ContactPoint",
-          "contactType": "customer support",
-          "email": "info@axyztem.es",
-          "url": "https://axyztem.es/contact"
-        }
-      },
-      {
-        "@type": "WebSite",
-        "name": "Axyztem",
-        "url": "https://axyztem.es",
-        "description": "Reliable SaaS systems for sustainable business innovation. Streamline operations with secure, modern software solutions.",
-        "potentialAction": {
-          "@type": "SearchAction",
-          "target": "https://axyztem.es/search?q={search_term_string}",
-          "query-input": "required name=search_term_string"
-        }
-      },
-      {
-        "@type": "SoftwareApplication",
-        "name": "Axyz Order System",
-        "url": "https://axyztem.es/axyz-order-system.html",
-        "applicationCategory": "BusinessApplication",
-        "operatingSystem": "Web",
-        "description": "Modern restaurant and bar management platform including post order system, queue management, display platform, and post payment system.",
-        "publisher": {
-          "@type": "Organization",
-          "name": "Axyztem Holdings LLC"
-        }
-      }
-    ]
-  }
-  </script>
 </head>
 
 <body>
@@ -96,7 +29,7 @@
 <div class="logo">
   <img src="images/axyztem-logo.png" alt="Axyztem Logo" style="height:50px;">
 </div>
-<div>
+<div class="nav-links">
   <a href="index.html">Home</a>
   <a href="about.html">About</a>
   <a href="projects.html">Projects</a>
@@ -114,7 +47,7 @@
 <a class="btn" href="about.html">About Axyztem</a>
 </div>
 <div class="hero-img">
-<img src="images/hero.png" alt="Technology Illustration" width="500">
+<img src="images/hero.jpg" alt="Technology Illustration">
 </div>
 </section>
 
@@ -126,17 +59,6 @@
 <footer>
 <p>© Axyztem — Sustainable Business Innovation</p>
 </footer>
-
-<script>
-// Scroll animation for future content if needed
-const elements = document.querySelectorAll('.card, .hero-text');
-const observer = new IntersectionObserver(entries=>{
-  entries.forEach(entry=>{
-    if(entry.isIntersecting) entry.target.style.opacity=1;
-  });
-},{threshold:0.2});
-elements.forEach(el=>observer.observe(el));
-</script>
 
 </body>
 </html>
