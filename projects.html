@@ -3,90 +3,82 @@
 <head>
 <meta charset="UTF-8">
 <title>Projects | Axyztem</title>
-<meta name="description" content="Explore Axyztem's innovative SaaS projects including ADS, Paging, Marketplace, and E-doc Generator.">
-<meta name="robots" content="index, follow">
-
 <link rel="stylesheet" href="css/styles.css">
-<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600&display=swap" rel="stylesheet">
 </head>
+
 <body>
 
 <header>
 <div class="container">
 <nav>
-<div class="logo">
-  <img src="images/axyztem-logo.png" alt="Axyztem Logo" style="height:50px;">
-</div>
-<div>
-  <a href="index.html">Home</a>
-  <a href="about.html">About</a>
-  <a href="projects.html">Projects</a>
-  <a href="contact.html">Contact</a>
-</div>
+  <div class="logo fade-up">
+    <img src="images/axyztem-logo.png" style="height:50px;">
+  </div>
+  <div class="nav-links fade-up">
+    <a href="index.html">Home</a>
+    <a href="about.html">About</a>
+    <a href="projects.html">Projects</a>
+    <a href="contact.html">Contact</a>
+  </div>
 </nav>
 </div>
 </header>
 
 <section class="hero">
-<div class="hero-text">
-<h1>Our Projects</h1>
-<p>Explore the innovative SaaS platforms we are developing to enhance operational efficiency and sustainability.</p>
-</div>
+  <div class="hero-text fade-up">
+    <h1>Our Projects</h1>
+    <p>Explore the innovative SaaS platforms we are building to enhance operational efficiency and sustainability.</p>
+  </div>
 </section>
 
-<section class="container">
+<section class="section gray">
+<div class="container">
 <div class="grid">
 
-<div class="card">
-<img src="images/aos.jpg" alt="Axyz Order System">
-<h3>Axyz Order System</h3>
-<p>Locally resilient workflow order platform for high-volume service environments.</p>
-<a class="btn" href="projects/axyz-order-system.html">Learn More →</a>
+  <div class="card fade-up">
+    <img src="images/aos.jpg">
+    <h3>Axyz Order System</h3>
+    <p>Locally resilient workflow order platform for high‑volume service environments.</p>
+    <a class="btn" href="projects/axyz-order-system.html">Learn More →</a>
+  </div>
+
+  <div class="card fade-up">
+    <img src="images/conzeusplace.jpg">
+    <h3>Conzeus Place</h3>
+    <p>Digital ecosystem connecting tourists, locals, businesses, and job‑seekers.</p>
+    <a class="btn" href="projects/conzeus-place.html">Learn More →</a>
+  </div>
+
+  <div class="card fade-up">
+    <img src="images/construction.jpg">
+    <h3>My‑Edoc Generator</h3>
+    <p>Automated document generation platform for construction documentation.</p>
+    <a class="btn" href="projects/my-edoc-generator.html">Learn More →</a>
+  </div>
+
 </div>
-
-<!--
-<div class="card">
-<img src="images/paging.jpg" alt="Axyz Paging System">
-<h3>Axyz Paging System</h3>
-<p>Smart notification and customer paging infrastructure.</p>
-<a class="btn" href="products/axyz-paging-system.html">Learn More →</a>
-</div> -->
-
-<div class="card">
-<img src="images/conzeusplace.jpg" alt="Conzeus Marketplace">
-<h3>Conzeus Place</h3>
-<p>Digital place ecosystem for tourists, locals, businesses, and job-seekers in Spain.</p>
-<a class="btn" href="projects/conzeus-place.html">Learn More →</a>
-</div>
-
-<div class="card">
-<img src="images/construction.jpg" alt="EDoc Document Generator">
-<h3>My-Edoc Generator</h3>
-<p>Automated document generation platform for contruction documentation.</p>
-<a class="btn" href="projects/my-edoc-generator.html">Learn More →</a>
-</div>
-
 </div>
 </section>
 
-<section class="cta">
-<h2>Learn More About Each Project</h2>
-<a class="btn" href="index.html">Back to Home</a>
+<section class="cta fade-up">
+  <h2>Discover How Our Solutions Transform Operations</h2>
+  <a class="btn" href="index.html">Back to Home</a>
 </section>
 
-<footer>
-<p>© Axyztem — Sustainable Business Innovation</p>
+<footer class="fade-up">
+  <p>© Axyztem — Sustainable Business Innovation</p>
 </footer>
 
 <script>
-// Scroll animation for project cards
-const cards = document.querySelectorAll('.card');
-const observer = new IntersectionObserver(entries=>{
-  entries.forEach(entry=>{
-    if(entry.isIntersecting) entry.target.style.opacity=1;
+const animatedElements=document.querySelectorAll('.fade-up');
+function animateOnScroll(){
+  animatedElements.forEach(el=>{
+    const rect=el.getBoundingClientRect();
+    if(rect.top<window.innerHeight-80){ el.classList.add('visible'); }
   });
-},{threshold:0.2});
-cards.forEach(card=>observer.observe(card));
+}
+window.addEventListener('scroll',animateOnScroll);
+window.addEventListener('load',animateOnScroll);
 </script>
 
 </body>

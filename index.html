@@ -1,24 +1,10 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
-  <title>Axyztem | Sustainable Business Innovation</title>
-
-  <meta name="description" content="Axyztem develops reliable and functional SaaS systems focused on sustainable business innovation. Streamline your business operations with modern, secure, and efficient software solutions.">
-  <meta name="keywords" content="SaaS systems, sustainable business innovation, business software, cloud applications, restaurant management software, bar management system, workflow automation, Axyztem">
-  <meta name="robots" content="index, follow">
-  <meta name="author" content="Axyztem Holdings LLC">
-  <meta http-equiv="Content-Language" content="en">
-  <meta name="theme-color" content="#007BFF">
-  <meta name="color-scheme" content="light dark">
-  <meta name="referrer" content="no-referrer-when-downgrade">
-
-  <link rel="canonical" href="https://axyztem.es/">
-  <link rel="stylesheet" href="css/styles.css">
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600&display=swap" rel="stylesheet">
+<meta charset="UTF-8">
+<title>Axyztem | Sustainable Business Innovation</title>
+<link rel="stylesheet" href="css/styles.css">
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&display=swap" rel="stylesheet">
 </head>
 
 <body>
@@ -26,39 +12,64 @@
 <header>
 <div class="container">
 <nav>
-<div class="logo">
-  <img src="images/axyztem-logo.png" alt="Axyztem Logo" style="height:50px;">
-</div>
-<div class="nav-links">
-  <a href="index.html">Home</a>
-  <a href="about.html">About</a>
-  <a href="projects.html">Projects</a>
-  <a href="contact.html">Contact</a>
-</div>
+  <div class="logo fade-up">
+    <img src="images/axyztem-logo.png" style="height:50px;">
+  </div>
+  <div class="nav-links fade-up">
+    <a href="index.html">Home</a>
+    <a href="about.html">About</a>
+    <a href="projects.html">Projects</a>
+    <a href="contact.html">Contact</a>
+  </div>
 </nav>
 </div>
 </header>
 
 <section class="hero">
-<div class="hero-text">
-<h1>Sustainable Business Innovation Through Reliable Software</h1>
-<p>We design reliable and functional SaaS platforms that improve operational efficiency through practical and resilient technology.</p>
-<a class="btn" href="projects.html">Explore Projects</a>
-<a class="btn" href="about.html">About Axyztem</a>
-</div>
-<div class="hero-img">
-<img src="images/hero.jpg" alt="Technology Illustration">
+  <div class="hero-text fade-up">
+    <h1>Sustainable Business Innovation Through Reliable Software</h1>
+    <p>We build modern SaaS platforms that enhance operational efficiency and long‑term sustainability for forward‑thinking organizations.</p>
+    <a class="btn fade-up" href="projects.html">Explore Projects</a>
+  </div>
+
+  <div class="hero-img fade-up parallax">
+    <img src="images/hero.png">
+  </div>
+</section>
+
+<section class="section gray">
+<div class="container fade-up">
+  <h2>Our Focus</h2>
+  <p>We design resilient, scalable, and practical SaaS systems engineered for real‑world performance.</p>
 </div>
 </section>
 
-<section class="cta">
-<h2>Discover Our Innovative Software Solutions</h2>
-<a class="btn" href="projects.html">View Projects</a>
+<section class="cta fade-up">
+  <h2>Discover Our Software Solutions</h2>
+  <a class="btn" href="projects.html">View Projects</a>
 </section>
 
-<footer>
-<p>© Axyztem — Sustainable Business Innovation</p>
+<footer class="fade-up">
+  <p>© Axyztem — Sustainable Business Innovation</p>
 </footer>
+
+<script>
+const animatedElements=document.querySelectorAll('.fade-up');
+function animateOnScroll(){
+  animatedElements.forEach(el=>{
+    const rect=el.getBoundingClientRect();
+    if(rect.top<window.innerHeight-80){ el.classList.add('visible'); }
+  });
+}
+window.addEventListener('scroll',animateOnScroll);
+window.addEventListener('load',animateOnScroll);
+
+window.addEventListener('scroll',()=>{
+  document.querySelectorAll('.parallax').forEach(el=>{
+    el.style.transform=`translateY(${window.scrollY * 0.1}px)`;
+  });
+});
+</script>
 
 </body>
 </html>
